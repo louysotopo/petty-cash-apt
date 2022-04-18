@@ -16,6 +16,7 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap'; 
 import { ToastrModule } from 'ngx-toastr';
+import { AdminsRoutingModule } from './pages/admins/admins-routing.module';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { ToastrModule } from 'ngx-toastr';
     MatSortModule,
     BrowserModule,
     AppRoutingModule,
+    AdminsRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
     AngularFireModule.initializeApp(environment.firebase),

@@ -41,8 +41,8 @@ export class SesionLoginComponent implements OnInit {
   searching(email:any){
     this.loginservice.authLogin({"email":email}).subscribe( data =>{
       if (data.usuario.user_category == "administrador"){
-        this.toast.info("administrator");
-        //this.router.navigate(["/admin"]);
+        
+        this.router.navigate(["/admin"]);
       }
       else if (data.usuario.user_category == "cajero"){
         this.toast.info("cajero");
