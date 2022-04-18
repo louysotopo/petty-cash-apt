@@ -31,6 +31,10 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatOptionModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
 import { AdminsComponent } from './admins.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatRadioModule} from '@angular/material/radio';
+import { MatInputModule} from '@angular/material/input';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [
@@ -62,11 +66,12 @@ import { AdminsComponent } from './admins.component';
     MatGridListModule,
     MatFormFieldModule,
     ReactiveFormsModule,
-    MatIconModule,
-    MatCardModule,
-    MatIconModule,
+    MatDialogModule,
+    MatRadioModule,
+    MatInputModule,
     MatOptionModule,
     MatSelectModule,
+    MatTooltipModule
   ]
 })
 export class AdminsModule { }

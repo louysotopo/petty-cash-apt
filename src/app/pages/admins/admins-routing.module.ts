@@ -13,8 +13,7 @@ const routes: Routes = [
     children:[
       {path:'',component:UsersListComponent },
       {path: 'user/:id/cajas',component: CajasListComponent},
-      {path:'user/:id/caja/:ed',component:PaymentsListComponent},
-      {path: 'createpayment', component:PaymentsCreateComponent}
+      {path:'user/:id/caja/:ed',component:PaymentsListComponent}
       
 
     ]

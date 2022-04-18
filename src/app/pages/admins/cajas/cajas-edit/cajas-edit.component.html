@@ -1,1 +1,52 @@
-<p>cajas-edit works!</p>
+<form class="formulario" [formGroup]='formEditCaja' (ngSubmit)="Editar(formEditCaja.value)">
+  
+    <div class="titulo" >
+        <span> Actualizar datos de Caja  </span>
+    </div>
+
+  <div class="contenido-informacion">
+
+      <div class="row">
+        <div class="nombrecito col-third">Saldo Anterior</div>
+        <div class="nombrecito col-third">Deposito Actual</div>
+        <div class="nombrecito col-third">Saldo Inicial</div>
+        <div class="input-group input-group-icon col-third"><input type="number" formControlName="box_previous_balance" placeholder="Saldo previo" value='{{datosCaja.box_previous_balance}}'/>
+            <div class="input-icon"><i class="fa fa-user"></i></div>
+        </div>
+        <div class="input-group input-group-icon col-third"><input type="number" formControlName="box_current_deposit" placeholder="Deposito Actual" value='{{datosCaja.box_current_deposit}}'/>
+            <div class="input-icon"><i class="fa fa-square"></i></div>
+        </div>
+
+        <div class="input-group input-group-icon col-third"><input type="number" formControlName="box_initial_balance" placeholder="Saldo Inicial" value='{{datosCaja.box_initial_balance}}'/>
+            <div class="input-icon"><i class="fa fa-clock-o"></i></div>
+        </div>
+
+        <div class="nombrecito col-half">Total Gastos</div>
+        <div class="nombrecito col-half">Saldo de Caja</div>
+        <div class="input-group input-group-icon col-half"><input type="number" formControlName="box_total_spends" placeholder="Total Gastos" value='{{datosCaja.box_total_spends}}'/>
+            <div class="input-icon"><i class="fa fa-files-o"></i></div>
+        </div>
+        <div class="input-group input-group-icon col-half"><input type="number" formControlName="box_cash_balance" placeholder="Saldo de Caja" value='{{datosCaja.box_cash_balance}}'/>
+            <div class="input-icon"><i class="fa fa-male"></i></div>
+        </div>
+
+        <div class="nombrecito col-third">Fecha de Deposito</div>
+
+        <div class="input-group col-third"><input type="date" formControlName="box_date" placeholder="Fecha de Deposito" value='{{datosCaja.box_date}}'/>
+            <!--<div class="input-icon"><i class="fa fa-usd"></i></div>-->
+        </div>
+     
+      <div class="row">
+        <h4>Estado de la Caja</h4>
+        <div class="input-group">
+            <select name='estadosCaja' formControlName="box_status">
+              <option selected value='{{datosCaja.box_status}}'>{{datosCaja.box_status}}</option>
+            </select>
+            <div mat-dialog-actions class="botonc">
+                <button type="submit">Actualizar datos </button>
+            </div>
+        </div>
+      </div>
+  </div>
+</div>
+</form>

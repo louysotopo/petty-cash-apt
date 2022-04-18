@@ -1,1 +1,64 @@
-<p>payments-create works!</p>
+ 
+<form class="formulario" [formGroup]='formpago' >
+  
+    <div class="titulo" >
+        <span> Anadir Nuevo Pago </span>
+    </div>
+
+    <div class="contenido-informacion">
+
+        <div class="row">
+            <h4>Datos Basicos</h4>
+            <div class="nombrecito col-third">Descripcion del Pago</div>
+            <div class="nombrecito col-third">Kilometraje (F. combustible )</div>
+            <div class="nombrecito col-third">Galones Compra</div>
+
+            <div class="input-group input-group-icon col-third"><input type="text" formControlName="descripcion" placeholder="Descripcion del pago" />
+                <div class="input-icon"><i class="fa fa-user"></i></div>
+                <div class="validador" *ngIf="formpago.get('descripcion')?.invalid && formpago.get('descripcion')?.touched">Rellenar el campo</div>
+            </div>
+            <div class="input-group input-group-icon col-third"><input type="number" formControlName="kilometros" placeholder="0"  />
+                <div class="input-icon"><i class="fa fa-square"></i></div>
+                <div class="validador" *ngIf="formpago.get('kilometros')?.invalid && formpago.get('kilometros')?.touched">Rellenar el campo</div>
+            </div>
+            <div class="input-group input-group-icon col-third"><input type="number" formControlName="galones" placeholder="0" />
+                <div class="input-icon"><i class="fa fa-clock-o"></i></div>
+                <div class="validador" *ngIf="formpago.get('galones')?.invalid && formpago.get('galones')?.touched">Rellenar el campo</div>
+            </div>
+
+            <div class="nombrecito col-half">Factura u otros</div>
+            <div class="nombrecito col-half">Motivo de Gasto</div>
+     
+            <div class="input-group input-group-icon col-half"><textarea formControlName="factura" placeholder="Factura u otros"></textarea>
+                <div class="input-icon"><i class="fa fa-files-o"></i></div>
+                <div class="validador" *ngIf="formpago.get('factura')?.invalid && formpago.get('factura')?.touched">Rellenar el campo</div>
+            </div>
+            <div class="input-group input-group-icon col-half"><input type="text" formControlName="razones" placeholder="Motivo de Gasto"/>
+                <div class="input-icon"><i class="fa fa-male"></i></div>
+                <div class="validador" *ngIf="formpago.get('razones')?.invalid && formpago.get('razones')?.touched">Rellenar el campo</div>
+            
+            <div class="nombrecito col-third">Monto de Pago</div>   
+            <div class="nombrecito col-third"></div></div>
+            <div class="nombrecito col-third"></div></div>
+            <div class="input-group input-group-icon col-third"><input type="number" formControlName="pago" placeholder="Monto del Pago"/>
+                <div class="input-icon"><i class="fa fa-usd"></i></div>
+                <div class="validador" *ngIf="formpago.get('pago')?.invalid && formpago.get('pago')?.touched">Rellenar el campo</div>
+            </div>
+            <div class="input-group col-third"><input type="date" formControlName="fecha" placeholder="Fecha"/>
+                <!--<div class="input-icon"><i class="fa fa-usd"></i></div>-->
+                <div class="validador" *ngIf="formpago.get('fecha')?.invalid && formpago.get('fecha')?.touched">Rellenar el campo</div>
+            </div>
+        </div>
+       
+        <div class="row">
+            <div mat-dialog-actions class="botonc">
+                <button type="button"  [disabled]='formpago.invalid' (click)='Guardar()'>Agregar Pago</button>
+            </div>
+        </div>
+        
+    
+    
+    
+
+</form>
+

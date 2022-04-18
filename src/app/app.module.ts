@@ -17,6 +17,8 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap'; 
 import { ToastrModule } from 'ngx-toastr';
 import { AdminsRoutingModule } from './pages/admins/admins-routing.module';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatTooltip } from '@angular/material/tooltip';
 
 
 @NgModule({
@@ -28,11 +30,13 @@ import { AdminsRoutingModule } from './pages/admins/admins-routing.module';
     CommonModule,
     MatTableModule,
     MatSortModule,
+    MatDialogModule,
     BrowserModule,
     AppRoutingModule,
     AdminsRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
+
     AngularFireModule.initializeApp(environment.firebase),
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     AngularFireAuthModule,

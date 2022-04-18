@@ -1,1 +1,43 @@
-<p>cajas-create works!</p>
+<form class="formulario" [formGroup]='formEditCaja' (ngSubmit)="Guardar()">
+  
+    <div class="titulo" >
+        <span> Crear nueva Caja  </span>
+    </div>
+
+  <div class="contenido-informacion">
+
+      <div class="row">
+        <div class="nombrecito col-third">Saldo Anterior</div>
+        <div class="nombrecito col-third">Deposito Actual</div>
+        <div class="nombrecito col-third">Numero de Caja</div>
+        
+        <div class="input-group input-group-icon col-third"><input type="number" formControlName="box_previous_balance" placeholder="Saldo Previo" value='{{datosCaja.box_previous_balance}}'/>
+            <div class="input-icon"><i class="fa fa-user"></i></div>
+        </div>
+        <div class="input-group input-group-icon col-third"><input type="number" formControlName="box_current_deposit" placeholder="Deposito Actual" value='{{datosCaja.box_current_deposit}}'/>
+            <div class="input-icon"><i class="fa fa-square"></i></div>
+        </div>
+        <div class="input-group input-group-icon col-third"><input type="number" formControlName="box_number" placeholder="Numero de Caja" value='{{datosCaja.box_number }}'/>
+            <div class="input-icon"><i class="fa fa-user"></i></div>
+        </div>
+        
+        <div class="nombrecito col-third">Fecha de Deposito</div>
+        <div class="nombrecito col-third"></div>
+        <div class="nombrecito col-third"></div>
+
+        
+        <div class="input-group col-third"><input type="date" formControlName="box_date" placeholder="Fecha de Deposito" value='{{datosCaja.box_date}}'/>
+            <!--<div class="input-icon"><i class="fa fa-usd"></i></div>-->
+        </div>
+     
+      <div class="row">
+
+        <div class="input-group">
+            <div mat-dialog-actions class="botonc">
+                <button type="submit">Crear Caja </button>
+            </div>
+        </div>
+      </div>
+  </div>
+</div>
+</form>
