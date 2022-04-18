@@ -1,0 +1,11 @@
+.padre {
+    height: 150px;
+    /*IMPORTANTE*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .hijo {
+    width: 200px;
+  }
