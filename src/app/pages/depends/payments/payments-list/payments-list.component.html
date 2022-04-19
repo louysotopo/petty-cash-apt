@@ -1,0 +1,122 @@
+<div class="de">
+    <h1>Caja {{caja.box_number}}   </h1>
+  </div>
+  
+  
+  
+    <div class="forms" [formGroup]='formCaja' >
+      <div class="name">
+        <label >Saldo anterior</label>
+        <input type="text" formControlName="box_previous_balance" id="name_input" value="{{datosCaja.box_previous_balance}}" readonly>
+      </div>
+      <div class="email">
+        <label>Deposito actual</label>
+        <input type="text"  formControlName="box_current_deposit"  id="name_input" value="{{datosCaja.box_current_deposit}}" readonly>
+      </div>
+      <div class="name">
+        <label>Saldo inicial</label>
+        <input type="text"  formControlName="box_initial_balance"  id="name_input" value="{{datosCaja.box_initial_balance}}" readonly>
+      </div>
+      <div class="email">
+        <label>Total gastos</label>
+        <input type="text"  formControlName="box_total_spends"   id="name_input" value="{{datosCaja.box_total_spends}}" readonly>
+      </div>
+      <div class="name">
+        <label>Saldo de caja</label>
+        <input type="text"   formControlName="box_cash_balance"  id="name_input" value="{{datosCaja.box_cash_balance}}" readonly>
+      </div>
+      
+    </div>
+    
+   <div class="right">
+      
+      <button type="button" class="btn" (click)="createPayment()" >
+  
+        <img class="space-right" src="../assets/dar-dinero.png" width="25" height="25" >
+        Anadir pago
+      
+      </button>
+  </div>
+  
+  <div class="right">
+    
+    <button type="button" class="btn" (click)="exportarExcel()" >
+      <img class="space-right" src="../assets/archivo-excel.png" width="25" height="25" >
+      Descargar Excel
+    </button>
+  </div>
+  
+  
+  <!-- aqui tablita-->
+  <div class="di left">
+      <h1 id="title">Lista de Pagos</h1>
+  </div>
+   
+  <br>
+  <div id="course">
+    <table mat-table [dataSource]="dataSource" matSort>
+  
+        <tr mat-header-row *matHeaderRowDef="headers"></tr>
+        <tr mat-row *matRowDef="let row; columns: headers;"></tr>
+        
+        <!-- Position Column -->
+        <ng-container matColumnDef="Item">
+        <th mat-header-cell *matHeaderCellDef> Item </th>
+        <td mat-cell *matCellDef="let element"> {{pagos.indexOf(element)+1}} </td>
+        </ng-container>
+  
+        <!-- Position Column -->
+        <ng-container matColumnDef="Fecha">
+          <th mat-header-cell *matHeaderCellDef> Fecha</th>
+          <td mat-cell *matCellDef="let element">{{element.spend_date}}</td>
+        </ng-container>
+      
+        <!-- Name Column -->
+        <ng-container matColumnDef="Descripcion">
+          <th mat-header-cell *matHeaderCellDef> Descripcion </th>
+          <td mat-cell *matCellDef="let element">{{element.spend_description}} </td>
+        </ng-container>
+      
+        <!-- Weight Column -->
+        <ng-container matColumnDef="Kilometraje">
+          <th mat-header-cell *matHeaderCellDef> Kilometraje </th>
+          <td mat-cell *matCellDef="let element">{{element.spend_Kilometers}} </td>
+        </ng-container>
+      
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="Galones">
+          <th mat-header-cell *matHeaderCellDef> Galones </th>
+          <td mat-cell *matCellDef="let element">{{element.spend_gallons}}</td>
+        </ng-container>
+        
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="Factura u otros">
+            <th mat-header-cell *matHeaderCellDef> Factura u otros </th>
+            <td mat-cell *matCellDef="let element">{{element.spend_payout}}</td>
+        </ng-container>
+                <!-- Symbol Column -->
+        <ng-container matColumnDef="Motivo de gasto">
+            <th mat-header-cell *matHeaderCellDef> Motivo de gasto </th>
+            <td mat-cell *matCellDef="let element">{{element.spend_reason}}</td>
+        </ng-container>      
+        
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="Gasto">
+            <th mat-header-cell *matHeaderCellDef> Gasto</th>
+            <td mat-cell *matCellDef="let element">{{element.spend_pay}}</td>
+        </ng-container>   
+  
+         <!-- Symbol Column -->
+        <ng-container matColumnDef="Acciones">
+          <th mat-header-cell *matHeaderCellDef> Acciones </th>
+          <td mat-cell *matCellDef="let element" class="botones">
+            <button type="button" class="btn btn-outline-success" (click)="editPago(element)"  ><mat-icon>remove_red_eye</mat-icon></button> 
+            <button type="button" class="btn btn-outline-danger"  (click)="deletePago(element)"  ><mat-icon>restore_from_trash</mat-icon></button>
+          </td>
+        </ng-container>
+        
+    </table>
+    <mat-paginator  class="blan"  [pageSizeOptions]="[5, 15, 25, 35]" showFirstLastButtons></mat-paginator>
+  
+  
+  </div>

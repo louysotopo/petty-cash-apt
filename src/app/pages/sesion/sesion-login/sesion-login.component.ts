@@ -45,9 +45,10 @@ export class SesionLoginComponent implements OnInit {
         this.router.navigate(["/admin"]);
       }
       else if (data.usuario.user_category == "cajero"){
-        this.toast.info("cajero");
-        console.log(data.usuario.user_id);
-        //this.router.navigate(["/depends",data.usuario.user_id]);
+        //this.toast.info("cajero");
+        
+      //console.log(data.usuario.user_id);
+        this.router.navigate(["/depends",data.usuario.user_id]);
       }
       else{
         this.toast.info("El correo electronico no se encuentra registrado en el sistema");

@@ -19,14 +19,17 @@ import { ToastrModule } from 'ngx-toastr';
 import { AdminsRoutingModule } from './pages/admins/admins-routing.module';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatTooltip } from '@angular/material/tooltip';
+import { DependsComponent } from './pages/depends/depends.component';
+import { DependsRoutingModule } from './pages/depends/depends-routing.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    SesionLoginComponent,
+    SesionLoginComponent
   ],
   imports: [
+
     CommonModule,
     MatTableModule,
     MatSortModule,
@@ -36,7 +39,7 @@ import { MatTooltip } from '@angular/material/tooltip';
     AdminsRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-
+    DependsRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     AngularFireAuthModule,

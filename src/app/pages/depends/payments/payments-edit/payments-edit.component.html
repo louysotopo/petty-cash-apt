@@ -1,0 +1,51 @@
+<form class="formulario" [formGroup]='formEditPago' (ngSubmit)="Editar(formEditPago.value)">
+  
+    <div class="titulo" >
+        <span> Actualizar datos de Caja  </span>
+    </div>
+
+  <div class="contenido-informacion">
+
+      <div class="row">
+        <div class="nombrecito col-third">Descripcion del Pago</div>
+        <div class="nombrecito col-third">Kilometraje (F. combustible )</div>
+        <div class="nombrecito col-third">Galones Compra</div>
+        <div class="input-group input-group-icon col-third"><input type="text" formControlName="spend_description" placeholder="descripcion de pago" value='{{datosPago.spend_description}}'/>
+            <div class="input-icon"><i class="fa fa-user"></i></div>
+        </div>
+        <div class="input-group input-group-icon col-third"><input type="number" formControlName="spend_kilometers" placeholder="Kilometraje" value='{{datosPago.spend_kilometers}}'/>
+            <div class="input-icon"><i class="fa fa-square"></i></div>
+        </div>
+        <div class="input-group input-group-icon col-third"><input type="number" formControlName="spend_gallons" placeholder="galones" value='{{datosPago.spend_gallons}}'/>
+            <div class="input-icon"><i class="fa fa-clock-o"></i></div>
+        </div>
+        <div class="nombrecito col-third">Factura u otros</div>
+        <div class="nombrecito col-third">Motivo de Gasto</div>
+        <div class="nombrecito col-third">Monto de Pago</div>
+        <div class="input-group input-group-icon col-third"><input type="text"  formControlName="spend_payout" placeholder="Factura y otros" value='{{datosPago.spend_payout}}'/>
+            <div class="input-icon"><i class="fa fa-files-o"></i></div>
+        </div>
+        <div class="input-group input-group-icon col-third"><input type="text" formControlName="spend_reason" placeholder="Motivo" value='{{datosPago.spend_reason}}'/>
+            <div class="input-icon"><i class="fa fa-male"></i></div>
+        </div>
+        <div class="input-group input-group-icon col-third"><input type="number" formControlName="spend_pay" placeholder="Monto de pago" value='{{datosPago.spend_pay}}'/>
+            <div class="input-icon"><i class="fa fa-male"></i></div>
+        </div>
+
+        <div class="nombrecito col-third">Fecha</div>
+
+        <div class="input-group col-third"><input type="date" formControlName="spend_date" placeholder="Fecha de Deposito" value='{{datosPago.spend_date}}'/>
+            <!--<div class="input-icon"><i class="fa fa-usd"></i></div>-->
+        </div>
+     
+      <div class="row">
+
+        <div class="input-group">
+            <div mat-dialog-actions class="botonc">
+                <button type="submit">Actualizar datos </button>
+            </div>
+        </div>
+      </div>
+  </div>
+</div>
+</form>

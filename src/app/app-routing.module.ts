@@ -6,6 +6,10 @@ const routes: Routes = [
   { path: '', component :SesionLoginComponent },
   { path: 'admin',
   loadChildren:() => import ('./pages/admins/admins.module').then(m => m.AdminsModule)
+  },
+  {
+    path: 'depends',
+    loadChildren:() => import('./pages/depends/depends.module').then(m => m.DependsModule)
   }
 
 ];

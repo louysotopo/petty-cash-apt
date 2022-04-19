@@ -124,7 +124,7 @@ export class PaymentsListComponent implements OnInit {
         this.toastr.error("ha ocurrido un error en los datos o servidor","Server Error");
 
       }
-      else if (resultado == 2){
+      else {
         this.toastr.success("Se ha registrado exitosamente el gasto","Nuevo Gasto ");
       }
       this.listarPagos();
@@ -148,7 +148,7 @@ export class PaymentsListComponent implements OnInit {
         this.toastr.error("Error al acceder a la Base de datos","Server Error");
 
       }
-      else if (resultado == 2 ) {
+      else {
         this.toastr.success("Se ha actualizado exitosamente el gasto","Nuevo Gasto ");
       }
       this.listarPagos();
@@ -164,7 +164,7 @@ export class PaymentsListComponent implements OnInit {
      if (resultado == 1){
         this.toastr.error("Error al acceder a la Base de datos","Server Error");
       }
-      else if (resultado == 2) {
+      else if (resultado == 2)  {
         this.toastr.success("Se ha eliminado exitosamente el gasto","Gasto Eliminado");
       }
       this.listarPagos();

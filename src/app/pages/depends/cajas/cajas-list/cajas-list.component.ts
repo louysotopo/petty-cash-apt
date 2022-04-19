@@ -101,13 +101,14 @@ export class CajasListComponent implements OnInit {
 
     });
     dialogRef.beforeClosed().subscribe(result=>{
+      console.log(result)
       if (result == 0  ){
         this.toast.info("Se han encontrado un error en los datos ingresados ","error en Base de Datos");
       }
       else if (result == 1 ){
         this.toast.info("error al encontrar la caja a editar","Error en Base de Datos");
       }
-      else{
+      else if (result == 2 ){
         this.toast.success("Se ha actulizado exitosamente la caja","Caja Actualizada");
       }
 
@@ -118,7 +119,7 @@ export class CajasListComponent implements OnInit {
   }
   
   public viewCaja(caja:Caja){
-      this.router.navigate(["admin/user",Number(this.user__),"caja",caja.box_cod]); 
+      this.router.navigate(["depends/misCajas",caja.box_cod]);  
   }
 
   public deleteCaja(caja:Caja) {

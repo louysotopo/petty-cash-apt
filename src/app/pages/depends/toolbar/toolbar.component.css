@@ -1,0 +1,34 @@
+mat-toolbar {
+    background: white;
+    text-align: left;
+    color: rgb(0, 0, 0);
+}
+
+.example-spacer {
+    flex:1 1 auto;
+  }
+.logout{
+    border-style: solid;
+    border-color:rgba(4, 9, 63, 0.95);
+    border-radius: 8%;
+}
+.logout:hover{
+    color: white;
+    background-color: rgba(1, 12, 141, 0.911);
+}
+.user{
+    color: rgb(0, 0, 0);
+    margin-left: 10%;
+}
+.menu-button{
+    margin-right: 3%;
+}
+.boton-sidebar{
+    padding-right: 50%;
+}
+
+mat-grid-tile{
+    background: #EAEAEA;
+    border-radius: 10px;
+    text-align: center;
+}
